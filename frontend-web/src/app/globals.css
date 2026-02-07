@@ -1,0 +1,38 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: #ffffff;
+  --color-foreground: #000000;
+  --font-sans: var(--font-poppins), system-ui, sans-serif;
+  --font-brand: var(--font-bricolage), system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.375rem;
+}
+
+@layer base {
+  * {
+    @apply border-neutral-200 outline-neutral-400/50;
+  }
+  body {
+    @apply bg-white text-black;
+  }
+}
+
+.hidden-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hidden-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide Next.js error overlay portal */
+nextjs-portal {
+  display: none !important;
+}
